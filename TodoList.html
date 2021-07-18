@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="app">
+        <div class="center">
+            <h1>Todo list</h1>
+            <input v-model="newTodo" @keyup.enter="createTodo">
+        </div>
+        <!-- {{newTodo}} -->
+        <ul id="todo-list">
+            <li v-for="(todo, index) in todos" :data-id="todo.id" :class="{complete: todo.complete}">
+                <input type="checkbox" v-model="todo.complete">
+                <div class="content">{{todo.content}}</div>
+                <button @click="deleteTodo(todo,index)">X</button>
+            </li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="action.js" charset="urf-8"></script>
+</body>
+</html>

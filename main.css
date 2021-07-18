@@ -1,0 +1,23 @@
+.center{
+    text-align: center;
+}
+
+#todo-list{
+    list-style-type: none;
+    padding-left: 0;
+}
+
+#todo-list li {
+    display: flex;
+    border-bottom: 1px solid #ccc;
+    padding: 10px;
+}
+
+#todo-list li.complete .content{
+    text-decoration: line-through;
+}
+
+#todo-list .content{
+    flex: 1;
+    padding: 0 10px;
+}
